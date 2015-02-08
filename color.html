@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            font-family: "Segoe UI Light", "Segoe UI Semilight", "Segoe UI", serif;
+            font-size: 32px;
+        }
+        div{
+            width: 350px;
+            height: 300px;
+            position: absolute;
+        }
+        #green{
+            background-color: rgba(0, 255, 0, 1);
+            margin-top: 50px;
+            border-radius: 0 0 0 50px;
+        }
+        #blue{
+            margin-top: 100px;
+            background-color: rgba(0, 0, 255, 1);
+            margin-left: 100px;
+            border-radius: 0 0 50px 0;
+        }
+        #red{
+            background-color: rgba(255, 0, 0, 1);
+            margin-left: 50px;
+            border-radius: 0 50px 0 0;
+        }
+        #yellow,#yellow2{
+            background-color: yellow;
+        }
+        #yellow{
+            width: 300px;
+            height: 50px;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+        #yellow2{
+            width: 50px;
+            height: 200px;
+            margin-left: 50px;
+            margin-top: 100px;
+        }
+        #magenta{
+            background-color: magenta;
+            width: 50px;
+            height: 200px;
+            margin-top: 100px;
+            margin-left: 350px;
+        }
+        #cyan{
+            background-color: cyan;
+            width: 250px;
+            height: 50px;
+            margin-top: 300px;
+            margin-left: 100px;
+        }
+        #white{
+            background-color: rgba(255, 255, 255, 1);
+            width: 250px;
+            height: 200px;
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+        div+input,#redinput+div{
+            margin-top: 420px;
+        }
+        input,.samplecolor{
+            margin: 5px;
+            width: 7em;
+        }
+        input{
+                min-width: 4em;
+
+        }
+
+        button{
+            margin: 10px 0 0 43px;
+        }
+        #note{
+            font-size: 12px;
+            color: red;
+        }
+        .samplecolor{
+             height: 48px;
+             width: 48px;
+             background-color: red;
+             display: inline;
+         }
+
+
+    </style>
+<script>
+
+
+    function changeColor(){
+        var color = ["color names"];
+        color[1] = document.getElementById("redinput").value;
+        color[2] = document.getElementById("greeninput").value;
+        color[3] = document.getElementById("blueinput").value;
+
+        for(i=0;i<color.length;i++){
+            if(color[i] == ""){
+                color[i] = "0";
+            }
+        }
+
+
+
+        document.getElementById("red").style.backgroundColor   = "rgba("+color[1]+",0,0                ,1)";
+        document.getElementById("green").style.backgroundColor = "rgba(0      ,"+color[2]+",0        ,1)";
+        document.getElementById("blue").style.backgroundColor  = "rgba(0      ,0        ,"+color[3]+" ,1)";
+
+
+        document.getElementById("yellow").style.backgroundColor  = "rgba("+color[1]+" ,"+color[2]+",0         ,1)";
+        document.getElementById("yellow2").style.backgroundColor = "rgba("+color[1]+" ,"+color[2]+",0         ,1)";
+        document.getElementById("magenta").style.backgroundColor = "rgba("+color[1]+" ,0        ,"+color[3]+"  ,1)";
+        document.getElementById("cyan").style.backgroundColor    = "rgba(0       ,"+color[2]+","+color[3]+"  ,1)";
+        document.getElementById("white").style.backgroundColor   = "rgba("+color[1]+" ,"+color[2]+","+color[3]+"  ,1)";
+    }
+</script>
+</head>
+<body>
+
+<div class="upper" id="green">          </div>
+<div class="upper" id="blue">           </div>
+<div class="upper" id="red">            </div>
+
+<div class="under"  id="yellow">        </div>
+<div class="under"  id="yellow2">       </div>
+<div class="under"  id="magenta">       </div>
+<div class="under"  id="cyan">          </div>
+<div class="middle" id="white">         </div>
+
+
+R:&nbsp;<input type="number" min="0" max="255" id="redinput" placeholder="0 - 255">   <div class="samplecolor" style="background-color: red"  ></div>  <br />
+G:&nbsp;<input type="number" min="0" max="255" id="greeninput" placeholder="0 - 255"> <div class="samplecolor" style="background-color: green"></div>  <br />
+B:&nbsp;<input type="number" min="0" max="255" id="blueinput" placeholder="0 - 255">  <div class="samplecolor" style="background-color: blue" ></div>  <br />
+<button type="button" onclick="changeColor();">&nbsp;MIX COLORS&nbsp;</button>  <br />
+<p> Enter colors value zero to 255           <br />
+    and then press MIX COLORS to get result  <br />
+    Initially red green and blue showing
+    its full power</p>
+<p id="auther">This Application is written by: <a href="https://www.facebook.com/malikasinger">Inzamam Malik</a></p>
+<p id="note">NOTE: this program may have some mistakes
+    or bugs bcz this is preview version of this program</p>
+
+
+</body>
+<!--<script>-->
+    <!--var width = document.getElementById("red").clientWidth;-->
+    <!--console.log(width);-->
+    <!--width = width + "px";-->
+    <!--document.getElementById("red").style.height= width.toString();-->
+
+<!--</script>-->
+</html>
